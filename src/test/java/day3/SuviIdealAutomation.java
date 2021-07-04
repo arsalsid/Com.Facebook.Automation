@@ -13,7 +13,7 @@ public class SuviIdealAutomation {
         WebDriver wd = new ChromeDriver();
         wd.get("http://www.suvideals.ooo/Login.action");
 
-
+/*
         By userInputTextBoxLocator = By.id("userHandle");
         WebElement userInputBox = wd.findElement(userInputTextBoxLocator);
         userInputBox.sendKeys("xyz@hotmail.com");
@@ -26,7 +26,21 @@ public class SuviIdealAutomation {
         WebElement loginButton = wd.findElement(loginButtonLocator);
         loginButton.click();
 
-/*
+//Chaining of WebElement: If the element does not have any unique attribute.
+//You will use one (Parent) WebElement to (child element)find another webElement...
+ */
+
+		/*
+		 * WebDriver is an interface (sub) and SearchContext (super interface)
+		 * SearchContext : findElements and findElement WebElement is also an sub
+		 * interface and extends SearchContext (Super Interface). Chaining of
+		 * webelement!!
+		 *
+		 *
+		 *
+		 *
+
+    */
 
         By createAccountButtonLocator = By.id("new-account-btn"); //Locator
         WebElement createAccountButton = wd.findElement(createAccountButtonLocator);
@@ -48,12 +62,11 @@ public class SuviIdealAutomation {
         WebElement passwordTextBox = registrationForm.findElement(passwordLocator);
         passwordTextBox.sendKeys("125qwx");
 
-        By createNewAccountButtonLocator = By.xpath("");
+        By createNewAccountButtonLocator = By.xpath("//button[text()='CREATE NEW ACCOUNT']");
         WebElement createNewAccount = registrationForm.findElement(createNewAccountButtonLocator);
         createNewAccount.click();
 
 
-*/
     }
 }
 
