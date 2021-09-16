@@ -34,7 +34,7 @@ public class SuviIdealAutomation {
 		 * WebDriver is an interface (sub) and SearchContext (super interface)
 		 * SearchContext : findElements and findElement WebElement is also an sub
 		 * interface and extends SearchContext (Super Interface). Chaining of
-		 * webelement!!
+		 * WebElement!!
 		 *
 		 *
 		 *
