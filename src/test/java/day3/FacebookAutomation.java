@@ -56,11 +56,10 @@ public class FacebookAutomation {
         newPasswordTextBox.sendKeys("Qwertyu");
         String url = wd.getTitle();
 
-       /* Locator issues
-        By genderRadioButtonLocator = By.xpath("//label.[58_mt]'/../input");
+
+        By genderRadioButtonLocator = By.xpath("//input[@type='radio' and @value='2']");
         WebElement genderRadioButton = wd.findElement(genderRadioButtonLocator);
         genderRadioButton.click();
-        */
 
         //BirthDay Calender Day , Month and Year//
 
@@ -85,6 +84,7 @@ public class FacebookAutomation {
         By registerAccountLocator = By.xpath("//button[text()='Sign Up']");
         WebElement registerAccountButton = wd.findElement(registerAccountLocator);
         registerAccountButton.click();
+
 
     }
 }
