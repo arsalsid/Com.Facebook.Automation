@@ -63,7 +63,7 @@ public class FacebookAutomation {
 
         //BirthDay Calender Day , Month and Year//
 
-        ////Select by Index
+        //Select by Index
         By dayDropDownLocator = By.name("birthday_day");
         WebElement dayDropDown = wd.findElement(dayDropDownLocator);
         Select dayDropDownSelect = new Select(dayDropDown);
@@ -84,7 +84,6 @@ public class FacebookAutomation {
         By registerAccountLocator = By.xpath("//button[text()='Sign Up']");
         WebElement registerAccountButton = wd.findElement(registerAccountLocator);
         registerAccountButton.click();
-
 
     }
 }
