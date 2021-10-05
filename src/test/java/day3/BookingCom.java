@@ -6,48 +6,50 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BookingCom {
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver wd = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(wd , 30);
         wd.get("https://www.booking.com/");
 /*
+        //Registration Page of Booking.com part
         By registerButtonLocator = By.xpath("//span[contains(text(), 'Register')]");
-        WebElement registerButton = wd.findElement(registerButtonLocator);
+        WebElement registerButton = wait.until(ExpectedConditions.visibilityOfElementLocated(registerButtonLocator));
         registerButton.click();
 
         By registerEmailLocator = By.id("username");
-        WebElement registerEmailTextBox = wd.findElement(registerEmailLocator);
+        WebElement registerEmailTextBox = wait.until(ExpectedConditions.visibilityOfElementLocated(registerEmailLocator));
         registerEmailTextBox.sendKeys("arsal243@gmail.com");
 
         By continueWithEmailLocator = By.xpath("//span[contains(text(), 'Continue with email')]");
-        WebElement continueWithEmailButton = wd.findElement(continueWithEmailLocator);
+        WebElement continueWithEmailButton = wait.until(ExpectedConditions.visibilityOfElementLocated(continueWithEmailLocator));
         continueWithEmailButton.click();
 
-        Thread.sleep(3000);
         By PasswordLocator = By.name("password");
-        WebElement PasswordTextBox = wd.findElement(PasswordLocator);
+        WebElement PasswordTextBox = wait.until(ExpectedConditions.visibilityOfElementLocated(PasswordLocator));
         PasswordTextBox.sendKeys("P@ssword");
 
         By signInLocator = By.xpath("//span[contains(text(), 'Sign in')]");
-        WebElement signInButton = wd.findElement(signInLocator);
+        WebElement signInButton = wait.until(ExpectedConditions.visibilityOfElementLocated(signInLocator));
         signInButton.click();
 
-        Thread.sleep(3000);
         By confirmPasswordLocator = By.id("confirmed_password");
-        WebElement confirmPasswordTextBox = wd.findElement(confirmPasswordLocator);
+        WebElement confirmPasswordTextBox = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmPasswordLocator));
         confirmPasswordTextBox.sendKeys("P@ssword");
 
         By createAccountLocator = By.xpath("//span[contains(text(), 'Create account')]");
-        WebElement createAccountTextBox = wd.findElement(createAccountLocator);
+        WebElement createAccountTextBox = wait.until(ExpectedConditions.visibilityOfElementLocated(createAccountLocator));
         createAccountTextBox.click();
-        */
 
+*/
+        //Not working WebElement
         //Handling DatePicker Calender By.xpath("//div[contains(text(), 'Check-in')]");
-        Thread.sleep(3000);
         By checkingLocator = By.xpath("//div[contains(text(), 'Check-in')]");
-        WebElement checkingButton = wd.findElement(checkingLocator);
+        WebElement checkingButton = wait.until(ExpectedConditions.visibilityOfElementLocated(checkingLocator));
         checkingButton.click();
 
     }

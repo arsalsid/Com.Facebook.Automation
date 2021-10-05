@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Iterator;
 import java.util.List;
@@ -14,6 +16,7 @@ public class CartAutomation {
 
         WebDriverManager.chromedriver().setup();
         WebDriver wd = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(wd, 30);
         wd.get("http://139.59.91.96:5001/selenium-workbook/shopping-cart.html");
 
         By priceLocator = By.xpath("//tr/td[2]");
@@ -21,7 +24,7 @@ public class CartAutomation {
         // with the specified locator
        // System.out.println(priceElement.getText());
 
-        List<WebElement> priceElements = wd.findElements(priceLocator);
+        List<WebElement> priceElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(priceLocator));
        /* for(WebElement element : priceElements){
             System.out.println(element.getText());
         }*/

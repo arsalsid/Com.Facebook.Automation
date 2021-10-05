@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,11 +16,12 @@ public class DatePicker {
 
         WebDriverManager.chromedriver().setup();
         WebDriver wd = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(wd, 30);
         wd.get("http://139.59.91.96:5001/selenium-workbook/datepicker.html");
 
 
         By datePickerLocator = By.id("datepicker");
-        WebElement dataPickerTextBox = wd.findElement(datePickerLocator);
+        WebElement dataPickerTextBox = wait.until(ExpectedConditions.visibilityOfElementLocated(datePickerLocator));
         dataPickerTextBox.click();
         Date d = new Date();
         System.out.println(d.toString());
