@@ -23,7 +23,7 @@ public class Oranum {
         String message = "Passed";
         System.out.println(message);
 
-        //Handling List of Elements
+        //Handling Multiple List of Elements
         By searchResultItemsLocator = By.xpath("//div[@data-testid='search-result-list']//div[2]/div");
         List<WebElement> searchList = wd.findElements(searchResultItemsLocator);
         System.out.println(searchList.size());
