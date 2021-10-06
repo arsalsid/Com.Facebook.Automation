@@ -16,7 +16,6 @@ public class BookingCom {
         WebDriverWait wait = new WebDriverWait(wd , 30);
         wd.get("https://www.booking.com/");
         wd.manage().window().maximize();
-/*
         //Registration Page of Booking.com part
         By registerButtonLocator = By.xpath("//span[contains(text(), 'Register')]");
         WebElement registerButton = wait.until(ExpectedConditions.visibilityOfElementLocated(registerButtonLocator));
@@ -46,7 +45,6 @@ public class BookingCom {
         WebElement createAccountTextBox = wait.until(ExpectedConditions.visibilityOfElementLocated(createAccountLocator));
         createAccountTextBox.click();
 
-*/
         //Not working WebElement
         //Handling DatePicker Calender By.xpath("//div[contains(text(), 'Check-in')]");
         By checkingLocator = By.xpath("//div[@data-sb-id='main' and @data-view-id=\"accommodation\"]");
