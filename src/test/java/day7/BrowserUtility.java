@@ -19,18 +19,20 @@ public class BrowserUtility {
     public void goToURL(String url){
         wd.get(url);
     }
-
     public void enterText (By locator, String textToEnter) {
 
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         element.sendKeys(textToEnter);
     }
+    public void enterPassword (By locator, String PasswordToEnter) {
 
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        element.sendKeys(PasswordToEnter);
+    }
     public void clickOn(By locator){
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         element.click();
     }
-
     public String getTextFrom(By locator){
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return element.getText();

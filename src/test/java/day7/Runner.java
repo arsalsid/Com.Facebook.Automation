@@ -14,21 +14,21 @@ public class Runner {
         WebDriver wd = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(wd, 30);
         BrowserUtility browserUtility = new BrowserUtility(wd, wait);
+        browserUtility.goToURL("http://139.59.91.96:5001/selenium-workbook/login.html");
+        wd.manage().window().maximize();
 
         By userIdLocator = By.id("userid"); //Locator
         browserUtility.enterText(userIdLocator,"abc");
 
 
         By passwordLocator = By.name("password"); // We are telling selenium which locator to use
+        browserUtility.enterPassword(passwordLocator, "admin123");
 
-        By headingLocator = By.tagName("h1"); //Locator
-        WebElement headingElement = wd.findElement(headingLocator);
-        String headingText = headingElement.getText(); //visibleText
-        System.out.println(headingText);
+        By headingTextLocator = By.tagName("h1"); //Locator
+        System.out.println(browserUtility.getTextFrom(headingTextLocator));
 
-        By loginButton = By.className("btn btn-primary"); //Locator
-        WebElement loginElement = wd.findElement(loginButton);
-        loginElement.click();
+        By loginButton = By.xpath("//input[@type='submit']"); //Locator
+        browserUtility.clickOn(loginButton);
 
 
 
